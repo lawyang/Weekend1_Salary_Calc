@@ -5,6 +5,7 @@ body{
 #salaryTitle{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
+    text-align: center;
 }
 
 #employeeTable {
@@ -30,4 +31,23 @@ body{
     text-align: left;
     background-color: rgb(3, 143, 143);
     color: rgb(12, 12, 12);
+}
+
+#employees {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+
+}
+
+#inputHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#addButton {
+    position: relative;
+    background-color: chartreuse;
+    left: 100;
 }

@@ -5,6 +5,7 @@ function readyNow() {
     console.log('JQ ready');
 
     $('#addButton').on('click', addEmployee);
+    $('#addButton').on('click', totalAnnualSalary);
 
 
 
@@ -20,6 +21,8 @@ class Employee {
         this.salary = salary;
     } // end constructor
 } // end employee class
+
+let annualSalary = 0;
 
 let arrayEmployee = [];
 
@@ -45,10 +48,20 @@ function addEmployee() {
     } // end else statement
 } // end addEmployee function
 
+function totalAnnualSalary (){
+    let x = 0
+
+    for (salary of a {
+        parseInt(arrayEmployee)
+    }
+
+    annualSalary += x;
+    console.log(annualSalary);
+    $('#totalSalary').empty();
+    $('#totalSalary').append( '<th> Total Annual Salary: ' + annualSalary + '</th>' );
+}
 
 
-
-//if ( $('#firstName').val() || $('#lastName').val() || $('#employId').val() || $('#employTitle').val() || $('#employSalary').val() === " " ) {
 
 
 //////////////////CODE BEFORE CONCATENATING
