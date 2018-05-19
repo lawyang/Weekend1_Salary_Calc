@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(180, 195, 223);
+    background-color: rgb(221, 235, 249);
 }
 
 #salaryTitle{
@@ -12,8 +12,8 @@ body{
     border-collapse: collapse; /* prevents the table from collapsing*/
     width: 90%;
     border: solid 1px;
-    border-left: none;
-    border-right: none;
+    border-left: solid 1px;
+    border-right: solid 1px;
 }
 
 #employeeTable tr{
@@ -22,7 +22,6 @@ body{
     border-bottom: 1px solid black;
     background-color: #c3c3c5;
 }
-
 #employeeTable tr:nth-child(even){background-color: #faf6f6;}
 
 #employeeTable th {

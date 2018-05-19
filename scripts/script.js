@@ -5,11 +5,10 @@ function readyNow() {
     console.log('JQ ready');
 
     $('#addButton').on('click', addEmployee);
-    $('#addButton').on('click', displayToTable);
 
 
 
-    
+
 } ///////////////////////////////////END READY NOW
 
 class Employee {
@@ -24,27 +23,56 @@ class Employee {
 
 let arrayEmployee = [];
 
-// function adds created employee class to arrayEmployee array
 function addEmployee() {
-    // get user input
-    // create new employee from input
-    let newEmployee = new Employee( $('#firstName').val(), $('#lastName').val(), $('#employId').val(), $('#employTitle').val(), $('#employSalary').val() );
-    console.log(newEmployee);
-    // store new employee
-    // push into array
-    arrayEmployee.push(newEmployee);
-    return arrayEmployee;
-    // update DOM
-    //end
-} //end 
+    let employeeFirstName = $('#firstName').val(); //to append into html table
+    let employeeLastName = $('#lastName').val(); //to append into html table
+    let employeeIdNumber = $('#employId').val(); //to append into html table
+    let employeeTitleName = $('#employTitle').val(); //to append into html table
+    let employeePay = $('#employSalary').val(); //to append into html table
+
+    let newEmployee = new Employee( $('#firstName').val(), $('#lastName').val(), $('#employId').val(), $('#employTitle').val(), $('#employSalary').val() ); // create new employee upon button click event
+
+    if ( $('#firstName').val() === "" || $('#lastName').val() === "" || $('#employId').val() === "" || $('#employTitle').val() === "" || $('#employSalary').val() === "" ) {
+        alert('Please complete all fields'); // validate if all fields are filled before continuing
+    } else {
+        // append created employee to a new table row
+        let addRow = $('#employeeTable').append('<tr><td>' + employeeFirstName + '</td> <td>' + employeeLastName + '</td> <td>' + employeeIdNumber + '</td> <td>' + employeeTitleName + '</td> <td>' + employeePay + '</td>   </tr>');
+        // log newEmployee array
+        console.log(newEmployee);
+        // push newly created employees into newEmployee array
+        arrayEmployee.push(newEmployee);
+        return arrayEmployee;
+    } // end else statement
+} // end addEmployee function
+
+
+
+
+//if ( $('#firstName').val() || $('#lastName').val() || $('#employId').val() || $('#employTitle').val() || $('#employSalary').val() === " " ) {
+
+
+//////////////////CODE BEFORE CONCATENATING
+// // function adds created employee class to arrayEmployee array
+// function addEmployee() {
+//     // get user input
+//     // create new employee from input
+//     let newEmployee = new Employee( $('#firstName').val(), $('#lastName').val(), $('#employId').val(), $('#employTitle').val(), $('#employSalary').val() );
+//     console.log(newEmployee);
+//     // store new employee
+//     // push into array
+//     arrayEmployee.push(newEmployee);
+//     return arrayEmployee;
+//     // update DOM
+//     //end
+// } //end 
 
 // function adds created employee to table on DOM
-function displayToTable() {
-    let employeeFirstName = $('#firstName').val();
-    let employeeLastName = $('#lastName').val();
-    let employeeIdNumber = $('#employId').val();
-    let employeeTitleName = $('#employTitle').val();
-    let employeePay = $('#employSalary').val();
+// function displayToTable() {
+//     let employeeFirstName = $('#firstName').val();
+//     let employeeLastName = $('#lastName').val();
+//     let employeeIdNumber = $('#employId').val();
+//     let employeeTitleName = $('#employTitle').val();
+//     let employeePay = $('#employSalary').val();
 
-    let addRow = $('#employeeTable').append('<tr><td>' + employeeFirstName + '</td> <td>' + employeeLastName + '</td> <td>' + employeeIdNumber + '</td> <td>' + employeeTitleName + '</td> <td>' + employeePay + '</td> </tr>');
-} //end displayToTable function
+//     let addRow = $('#employeeTable').append('<tr><td>' + employeeFirstName + '</td> <td>' + employeeLastName + '</td> <td>' + employeeIdNumber + '</td> <td>' + employeeTitleName + '</td> <td>' + employeePay + '</td> </tr>');
+// } //end displayToTable function
