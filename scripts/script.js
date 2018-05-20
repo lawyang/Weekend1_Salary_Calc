@@ -6,6 +6,10 @@ function readyNow() {
 
     $('#addButton').on('click', addEmployee);
 
+    // over 20000
+    if (annualSalary > 20000){
+        
+    }
 
 } ///////////////////////////////////END READY NOW
 
@@ -20,6 +24,7 @@ class Employee {
 } // end employee class
 
 let arrayEmployee = [];
+let annualSalary = 0;
 
 function addEmployee() {
     let employeeFirstName = $('#firstName').val(); //to append into html table
@@ -31,22 +36,20 @@ function addEmployee() {
 
     if ( $('#firstName').val() === "" || $('#lastName').val() === "" || $('#employId').val() === "" || $('#employTitle').val() === "" || $('#employSalary').val() === "" ) {
         $('#addButton').prop('diabled', true );
-        console.log('hello');
         alert('Please fill all fields'); // validate if all fields are filled before continuing
     } else {
         $('#addButton').prop('diabled', false );
-        let annualSalary = 0;
+
         // append created employee to a new table row
         let addRow = $('#employeeTable').append('<tr><td>' + employeeFirstName + '</td> <td>' + employeeLastName + '</td> <td>' + employeeIdNumber + '</td> <td>' + employeeTitleName + '</td> <td>' + '$' + employeePay + '</td>   </tr>');
         // log newEmployee array
         console.log(newEmployee);
-        // push newly created employees into newEmployee array
+        arrayEmployee.push(newEmployee); // push newemployee into arrayEmployee 
         let x = parseInt( $('#employSalary').val() ); // empty value to dump employeeSalary
         annualSalary += x; // sum of all employee salary
         console.log(annualSalary); // log total annual salary to check if script is working
         $('#totalSalary').empty(); // empty out the totalSalary table row from the DOM
-        $('#totalSalary').append( '<div> Total Annual Salary: ' + '$' + annualSalary + '</div>' ); // append the total annual salary to the emptied table row on he DOM
-        arrayEmployee.push(newEmployee);
+        $('#totalSalary').append( '<div> Total Annual Salary: ' + '$' + annualSalary.toFixed(2) + '</div>' ); // append the total annual salary to the emptied table row on he DOM
         return arrayEmployee;
     } // end else statement
 } // end addEmployee function
@@ -58,6 +61,8 @@ function clear() {
     $('#employTitle').val('');
     $('#employSalary').val('');
 }
+
+
 
 // function totalAnnualSalary() {
 //     let x = parseInt( $('#employSalary').val() ); // empty value to dump employeeSalary
