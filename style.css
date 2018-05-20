@@ -49,5 +49,7 @@ body{
 #addButton {
     position: relative;
     background-color: chartreuse;
-    left: 100;
+    left: 540px;
+    width: 100px;
+    height: 25px;
 }
