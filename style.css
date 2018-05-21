@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(254, 75, 62);
+    background-color: rgb(228, 212, 211);
 }
 
 #salaryTitle{
@@ -13,17 +13,22 @@ body{
     border-collapse: collapse; /* prevents the table from collapsing*/
     width: 90%;
     border: solid 3px;
-    border-left: solid 1px;
-    border-right: solid 1px;
 }
 
-#employeeTable tr{
-    padding-top: 9px;
-    padding-bottom: 9px;
+
+#employeeTable tr {
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-bottom: 1px solid black;
-    background-color: #c3c3c5;
+    background-color: #b5b1b1;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
 }
-#employeeTable tr:nth-child(even){background-color: #faf6f6;}
+
+
+#employeeTable tr:nth-child(even){
+    background-color: #faf6f6;
+}
 
 #employeeTable th {
     padding-top: 9px;
@@ -32,6 +37,7 @@ body{
     background-color: rgb(3, 143, 143);
     color: rgb(12, 12, 12);
 }
+
 
 #employees {
     font-family: Arial, Helvetica, sans-serif;
@@ -59,7 +65,7 @@ body{
     border-collapse: collapse; /* prevents the table from collapsing*/
     width: 90%;
     text-align: right;
-    
+    font-size: 25px;
 }
 
 #sumTable th {
@@ -68,3 +74,5 @@ body{
     text-align: right;
     color: rgb(12, 12, 12);
 }
+
+
