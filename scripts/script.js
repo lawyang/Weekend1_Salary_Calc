@@ -7,7 +7,8 @@ function readyNow() {
     let arrayEmployee = [];
     let annualSalary = 0;
     let monthlyPay = 0;
-    let remove = '<td><button id="deleteButton"> Delete </button></td>'; 
+
+
 
     $('#addButton').on('click', function( ){
         let employeeFirstName = $('#firstName').val(); //to append into html table
@@ -19,13 +20,10 @@ function readyNow() {
          
 
         if ( $('#firstName').val() === "" || $('#lastName').val() === "" || $('#employId').val() === "" || $('#employTitle').val() === "" || $('#employSalary').val() === "" ) {
-            $('#addButton').prop('diabled', true );
             alert('Please fill all fields'); // validate if all fields are filled before continuing
         } else {
-            $('#addButton').prop('diabled', false );
-
             // append created employee to a new table row
-            let addRow = $('#employeeTable').append('<tr><td>' + employeeFirstName + '</td> <td>' + employeeLastName + '</td> <td>' + employeeIdNumber + '</td> <td>' + employeeTitleName + '</td> <td>' + '$' + employeePay + remove + '</tr>');
+            let addRow = $('#employeeTable').append('<tr><td>' + employeeFirstName + '</td> <td>' + employeeLastName + '</td> <td>' + employeeIdNumber + '</td> <td>' + employeeTitleName + '</td> <td>' + '$' + employeePay + '<td><button class="deleteButton"> Delete </button></td> </tr>');
             // log newEmployee array
             console.log(newEmployee);
             arrayEmployee.push(newEmployee); // push newemployee into arrayEmployee 
@@ -49,7 +47,7 @@ function readyNow() {
             }
         });
 
-    $('remove').on('click', function( ){
+    $('#deleteButton').on('click', function( ){
         alert('HI');
     });
 
